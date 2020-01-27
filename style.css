@@ -1,3 +1,24 @@
+@font-face {
+    font-family: 'digital-7_monomono';
+    src: url('fonts/digital-7.mono-webfont.woff2') format('woff2'),
+         url('fonts/digital-7.mono-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'digital-7_monoitalic';
+    src: url('fonts/digital-7.monoitalic-webfont.woff2') format('woff2'),
+         url('fonts/digital-7.monoitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 html {
     background-color: rgb(48, 46, 39);
     color: rgb(131, 77, 39);
@@ -10,12 +31,17 @@ html {
 
 .calculator {
     display: grid;
-    width: 20%;
-    margin: 10% auto;
-    background-color: rgb(61, 54, 49);
+    width: 250px;
+    margin: 5% auto;
+    padding: 15px;
+    border: 2px solid rgb(85, 85, 56);
+    border-radius: 5px;
+    background-color: rgb(134, 121, 93);
+    box-shadow: 0 0 8px black;
     grid-template-columns: auto auto auto;
-    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto auto auto;
     grid-gap: 10px 10px;
+    font-size: 22px;
 }
 
 .top-bar {
@@ -23,19 +49,129 @@ html {
     grid-row: 1;
     width: 100%;
     height : 20px;
-    background-color: red;
+    background-color: rgb(80, 155, 111);
+    color: rgb(114, 100, 71);
+}
+
+.solar {
+    float: right;
 }
 
 .screen {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: rgb(145, 170, 104);
+    border: 2px inset rgb(119, 139, 87);
+    color: rgba(133, 120, 95, 0.637);
+    text-align: right;
     grid-column: 1 / end;
     grid-row: 2;
+}
+
+.screen1 {
+   font-size: 90%;   
+   font-family: 'digital-7_monoitalic', monospace; 
+   position: relative;
+}
+
+.screen2 {
+    font-size: 180%;
+    font-family: 'digital-7_monomono', monospace;
+    position: relative;
+}
+
+.screen-overlay {
+    position: absolute;
     width: 100%;
-    height : 20px;
-    background-color: rgb(145, 170, 104);
+    top:0;
+    color: rgb(31, 31, 31);
+}
+
+.calc-hr {
+    margin: 0 auto;
+    height: 3px;
+    width: 92%;
+    color: rgb(80, 155, 111);
+    background-color: rgb(80, 155, 111);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.356);
+    grid-row: 3;
+    grid-column: 1 / end;
+    
 }
 
 .key {
-    background-color: rgb(68, 65, 50);
+    background-color: rgb(134, 121, 93);
+    border: 2px solid rgb(119, 106, 79);
+    color: rgb(56, 54, 38);
+    border-radius: 3px;
+    box-shadow: 0 0 2px black;
+    text-align: center;
+    padding: 15px;
+}
+
+.key:hover {
+    scale: 1.05;
+}
+
+.key:active{
+    scale: 0.95;
+    background-color: rgb(97, 85, 59);
+    border: 2px solid rgb(88, 74, 42);
+}
+
+.key-operator {
+    background-color: rgba(107, 84, 109, 0.753);
+    border: 2px solid rgba(100, 77, 102, 0.753);
+    color: rgba(208, 216, 202, 0.603);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.key-operator:active {
+    scale: 0.95;
+    background-color: rgba(85, 67, 87, 0.753);
+    border: 2px solid rgba(82, 64, 83, 0.753);
+}
+
+.key-equals {
+    background-color: rgb(80, 155, 111);
+    border: 2px solid rgb(74, 143, 103);
+    color: rgba(49, 49, 49, 0.603);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.key-equals:active {
+    scale: 0.95;
+    background-color: rgb(67, 133, 95);
+    border: 2px solid rgb(61, 121, 86);
+}
+
+.key-back {
+    background-color: rgb(163, 154, 75);
+    border: 2px solid rgb(143, 135, 63);
+    font-size: 90%;
+    font-weight: bold;
+    color: rgba(194, 194, 194, 0.815);
+
+}
+
+.key-back:active{
+    scale: 0.95;
+    background-color: rgb(138, 130, 61);
+    border: 2px solid rgb(122, 115, 51);
+}
+
+.key-clear {
+    background-color: rgb(163, 93, 75);
+    border: 2px solid rgb(145, 79, 63);
+    font-size: 90%;
+    font-weight: bold;
+    color: rgba(194, 194, 194, 0.815);
+}
+
+.key-clear:active {
+    scale: 0.95;
+    background-color: rgb(143, 77, 61);
+    border: 2px solid rgb(121, 63, 49);
 }
 
 .col1-2 {
