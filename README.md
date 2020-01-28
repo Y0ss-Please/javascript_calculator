@@ -11,5 +11,6 @@ Features:
 - All numbers limited to ten digits. Solutions in excess are converted to exponential notation.
 - Has an invert key for negative values.
 - Works with decimals.
+- Works with keyboard like how you would expect.
 
 Thanks.
