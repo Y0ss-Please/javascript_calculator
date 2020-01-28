@@ -72,8 +72,7 @@ function keyClicked(e) {
 }
 
 function buildNumberA(val) {
-    if (eFreeze) {return;}
-    if (bFreeze) {
+    if (eFreeze||bFreeze) {
         clear();
     }
     if (arrayNumberA[0] == 0 && arrayNumberA[1] != '.') { // If the first digit is zero, the second must be a decimal.
