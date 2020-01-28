@@ -135,18 +135,13 @@ function decimal() {
 
 function equals() {
     if (eFreeze) {return;}
-    if (numberA === ''){ 
+    if (numberB === ''){ // do nothing on empty numberB value
         return;
-    } else if (numberB === '') { // do nothing on empty values
-        return;
+    } else if (numberA === '') {  // previous imput becomes current.
+        numberA =numberB;
+        applyEquals();
     } else if (!equalSymbol){ // normal operation
-        numberCSpace = '';
-        numberC = numberA;
-        for (i=numberC.length;i<10;i++){
-            numberCSpace = '&nbsp;'+numberCSpace;
-        }
-        numberA = solve(numberA,operator,numberB);
-        equalSymbol = true;
+        applyEquals();
     } else { // if the equation has run before, pressing equals will repeat the operation on the previous soluion.
         numberB = numberA;
         numberA = solve(numberC,operator,numberA);
@@ -155,6 +150,16 @@ function equals() {
     oFreeze = false;
     checkOverflow(numberA);
     updateScreen();
+}
+
+function applyEquals() {
+    numberCSpace = '';
+    numberC = numberA;
+    for (i=numberC.length;i<10;i++){
+        numberCSpace = '&nbsp;'+numberCSpace;
+    }
+    numberA = solve(numberA,operator,numberB);
+    equalSymbol = true;
 }
 
 function back() { // backspace

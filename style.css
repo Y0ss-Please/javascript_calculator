@@ -168,10 +168,14 @@ html {
     border: 2px solid rgb(122, 115, 51);
 }
 
+.key-invert {
+    font-size: 85%;
+}
+
 .key-clear {
     background-color: rgb(163, 93, 75);
     border: 2px solid rgb(145, 79, 63);
-    font-size: 90%;
+    font-size: 85%;
     font-weight: bold;
     color: rgba(194, 194, 194, 0.815);
 }
