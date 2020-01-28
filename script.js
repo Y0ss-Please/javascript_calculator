@@ -23,8 +23,15 @@ keys.forEach(key => {
     document.addEventListener('click', keyClicked);
 });
 
+document.addEventListener('keydown', (e) => {
+    keyClicked(e);
+    if (e.key == '/') { 
+        e.preventDefault(); // prevents the "quick find" box from popping up.
+    }
+});
+
 function keyClicked(e) {
-    const id = e.target.id;
+    const id = (e.target.id) ? e.target.id : e.key;
     if (id == '') {return;} // Clicking a keys box-shadow passes null for some reason, this filters those mis-clicks.
     if (!isNaN(id) ){ // If not Not-A-Number
         buildNumberA(id);
@@ -32,20 +39,29 @@ function keyClicked(e) {
         switch (id) {
             case '+':
             case '-':
-            case 'X':
             case '/':
                 operate(id);
             break;
+            case 'X':
+            case 'x':
+            case '*':
+                operate('X');
+            break;
             case 'decimal':
+            case '.':
                 decimal();
             break;
             case 'equals':
+            case '=':
+            case 'Enter':
                 equals();
             break;
             case 'back':
+            case 'Backspace':
                 back();
             break;
             case 'clear':
+            case 'c':
                 clear();
             break;
             case 'invert':
